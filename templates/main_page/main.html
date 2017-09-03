@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+
+{% block title %} Simply - Secured {% endblock %}
+
+
+{% block content %}
+    <form action="/" method="POST">
+        {% csrf_token %}
+          <div class="form-group">
+            <label for="inputlg">Insert Your Text</label>
+              <textarea class="form-control" rows="10" name="secured_text" required></textarea>
+              <br>
+              <button class="btn btn-block btn-primary" type="submit" >Submit</button>
+          </div>
+    </form>
+    {{ form.errors }}
+    {{ form.non_field_errors }}
+{% endblock %}
